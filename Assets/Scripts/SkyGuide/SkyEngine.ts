@@ -44,9 +44,7 @@ export function getSphereRadius(): number {
 export function initLocation(scriptComponent: BaseScriptComponent): void {
   // Request GPS position
   try {
-    const locationService = global.LocatedAtComponent
-      ? null
-      : GeoLocation.createLocationService();
+    const locationService = GeoLocation.createLocationService();
     if (locationService) {
       locationService.accuracy = GeoLocationAccuracy.Navigation;
 
